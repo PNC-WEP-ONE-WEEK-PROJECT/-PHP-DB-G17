@@ -14,7 +14,8 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, ut. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore consequuntur vel voluptate earum soluta quis error provident veritatis harum laborum similique, recusandae adipisci. Ratione, perferendis culpa laborum eos aspernatur delectus!</p>
             </div>
             <div class="row-pic">
-                <img src="images/girls.jpg" alt="">
+                <!-- <img src="images/girls.jpg" alt=""> -->
+            <!-- <img src="/images/girls.jpg" width="60" height="60" class="d-inline-block align-top" alt=""> -->
             </div>
             <div class="row-com-like">
                 <button class="like">like  23k</button>
@@ -32,22 +33,13 @@
                 <h3>MEY SOK</h3>
             </div>
             <div class="btn_post">
-            <button><a href="">What's on your mine</a></button>
+            <button><a href="views/post_view.php">What's on your mine</a></button>
             </div>
         </div>
     </div>
     
 </div>
     
-
-
-
-
-
-
-
-
-
 
 
 
