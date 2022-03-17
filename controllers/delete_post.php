@@ -6,5 +6,5 @@ isset($_GET['id']) ? $id = $_GET['id'] : $id = null;
 if($id !== null)
 {
     delete_post($id);
-    header('location: ../index.php');
+    header('location: ../views/post_view.php');
 }

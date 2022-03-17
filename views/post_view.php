@@ -3,6 +3,12 @@ require_once ('../templates/header.php');
 require_once ('../models/post.php');
 
 ?>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Facebook</span>
+    <a href="../index.php"><i class="fa fa fa-home" style="font-size:40px"></i></a>
+  </div>
+</nav>
 <div class="container">
     <!-- Your code here -->
         <form action="../controllers/create_post.php" method="post">
@@ -19,7 +25,7 @@ require_once ('../models/post.php');
         </form>
         <div class="container">
     <?php
-        $posts = getPost();
+        $posts = get_post();
         foreach($posts as $post):
     ?>
         <div class="right-post">

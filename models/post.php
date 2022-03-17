@@ -4,7 +4,7 @@
  */
 require_once('database.php');
 
-function createPost($descriptoin,$user_id){
+function create_post($descriptoin,$user_id){
     global $db;
     $statement = $db->prepare('INSERT INTO posts (descriptoin,user_id) values(:descriptoin,:user_id)');
     $statement->execute([
@@ -13,12 +13,7 @@ function createPost($descriptoin,$user_id){
     ]);
     return $statement->rowcount()>0;
 }
-function getPost(){
-    global $db;
-    $statement = $db ->prepare("SELECT *FROM posts order by post_id desc");
-    $statement ->execute();
-    return $statement->fetchAll();
-}
+
 
 
 function get_post()
@@ -29,6 +24,7 @@ function get_post()
     return $statement->fetchAll();
     
 }
+
 function delete_post($id)
 {
     global $db;
@@ -38,4 +34,23 @@ function delete_post($id)
     ]);
     return $statement->rowCount() > 0;
    
+}
+function get_post_by_id($id){
+    global $db;
+    $statement =$db->prepare("SELECT * FROM posts WHERE post_id = :post_id");
+    $statement->execute([
+        ':post_id'=>$id,
+    ]);
+    return $statement->fetch();
+}
+
+function udate_post($post_id,$descriptoin,$user_id){
+    global $db;
+    $statement=$db ->prepare("UPDATE POSTS SET descriptoin=:descriptoin,user_id where post_id = :post_id");
+    $statement->execute([
+        ':descriptoin'=>$descriptoin,
+        ':user_id' => $user_id,
+        ':post_id' => $post_id
+    ]);
+    return $statement->rowcount()>0;
 }
