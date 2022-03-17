@@ -18,6 +18,7 @@ require_once ('models/post.php');
         $posts = getPost();
         foreach($posts as $post):
     ?>
+    
         <div class="right-post">
                 <div class="header">
                     <img class="img-cover" src="images/rady.jpg" alt="">
@@ -25,9 +26,10 @@ require_once ('models/post.php');
                 </div>
                 <div class="description"><?php echo $post['descriptoin'] ?></div> 
                 <div class="img-post"><img src="images/girls.jpg" alt=""></div>
+
         </div>
             <?php endforeach ?>
-    </div>
+        </div>
 
 
     <div class="left-bar">

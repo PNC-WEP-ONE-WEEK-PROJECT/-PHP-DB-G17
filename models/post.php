@@ -19,3 +19,23 @@ function getPost(){
     $statement ->execute();
     return $statement->fetchAll();
 }
+
+
+function get_post()
+{   
+    global $db;
+    $statement = $db->prepare('SELECT * FROM posts ORDER BY post_id desc');
+    $statement->execute();
+    return $statement->fetchAll();
+    
+}
+function delete_post($id)
+{
+    global $db;
+    $statement = $db->prepare('DELETE FROM posts WHERE post_id = :id');
+    $statement->execute([
+        ':id' => $id
+    ]);
+    return $statement->rowCount() > 0;
+   
+}

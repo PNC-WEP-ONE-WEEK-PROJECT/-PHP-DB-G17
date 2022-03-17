@@ -24,13 +24,23 @@ require_once ('../models/post.php');
     ?>
         <div class="right-post">
                 <div class="header">
-                    <img class="img-cover" src="../images/rady.jpg" alt="">
+                    <!-- <img class="img-cover" src="../images/rady.jpg" alt=""> -->
                     <p>2021-10-02</p>
                 </div>
                 <div class="description"><?php echo $post['descriptoin'] ?></div> 
-                <div class="img-post"><img src="../images/girls.jpg" alt=""></div>
+                <!-- <div class="img-post"><img src="../images/girls.jpg" alt=""></div> -->
+                <div class="icon">
+                    <!-- edit -->
+                    <a href="" ><i class="fa fa-pen"></i></a>
+                    <!-- delete -->
+                    <a href="../controllers/delete_post.php?id=<?php echo $post['post_id'] ?>" ><i class="fa fa-trash"></i></a>
+                </div>
+
         </div>
-            <?php endforeach ?>
+        <?php endforeach ?>
+
+        </div>
+
     </div>
 
         </div>
