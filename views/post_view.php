@@ -31,7 +31,7 @@ require_once ('../models/post.php');
                 <!-- <div class="img-post"><img src="../images/girls.jpg" alt=""></div> -->
                 <div class="icon">
                     <!-- edit -->
-                    <a href="" ><i class="fa fa-pen"></i></a>
+                    <a href="edit_view.php?id=<?php echo $post['post_id']?>" ><i class="fa fa-pen"></i></a>
                     <!-- delete -->
                     <a href="../controllers/delete_post.php?id=<?php echo $post['post_id'] ?>" ><i class="fa fa-trash"></i></a>
                 </div>

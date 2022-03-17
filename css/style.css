@@ -1,6 +1,4 @@
-.nav{
-    position: fixe;
-}
+
 .img-cover{
 width: 15%;
 border-radius: 100%;
@@ -16,40 +14,58 @@ border-radius: 100%;
     margin: 10px;
 }
 .rigth-bar{
-    overflow: scroll;
+    overflow-y: auto;
     width: 70%;
+    height: 90vh;
+}
+.left-bar{
+    width: 30%;
+    margin-left: 10%;
+
 }
 .right-post{
     width: 50%;
-
+    margin: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   
 }
-
-.img-post img{
-    width: 50%;
+.header img{
+    width: 20%;
+    border-radius: 100%;
 }
-.img-cover img{
+.img-post img{
+    width: 60%;
+}
+.img-cover {
     width: 250px;
-
     position: relative;
 }
 .img-profile img{
     position: absolute;
-    width: 20%;
+    width: 150px;
     border-radius: 100%;
-    bottom: 10px;
+    bottom: 35%;
 }
 .name-profile,
 .btn_post button
 {
     margin-top: 80px;
 }
+.description,
+.img-post{
+    margin-left: 30%;
+}
 
+/* .left-bar
+.img-cover
+.img-profile
+.name-profile{
+    margin-left: 30%;
+} */
 /* button post */
 .btn_post button{
     border: none;
     width: 200px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    /* background: none; */
 }

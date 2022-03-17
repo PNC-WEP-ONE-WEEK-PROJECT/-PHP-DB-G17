@@ -21,7 +21,7 @@ require_once ('models/post.php');
     
         <div class="right-post">
                 <div class="header">
-                    <img class="img-cover" src="images/rady.jpg" alt="">
+                    <img src="images/rady.jpg" alt="">
                     <p>2021-10-02</p>
                 </div>
                 <div class="description"><?php echo $post['descriptoin'] ?></div> 
