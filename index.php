@@ -27,6 +27,10 @@ require_once ('models/post.php');
                 </div>
                 <div class="description"><?php echo $post['descriptoin'] ?></div> 
                 <div class="img-post"><img src="images/girls.jpg" alt=""></div>
+                <button class="like"><a class="fa fa fa-thumbs-up"  >like ❤ 23k</a> </button>
+                <button class="like"><a href="views/display_comment_view.php?id=<?php echo $post['post_id'] ?>" >comment</a> </button>
+              
+
 
         </div>
             <?php endforeach ?>

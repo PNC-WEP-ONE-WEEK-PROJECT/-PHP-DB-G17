@@ -7,8 +7,6 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         $isCreated = create_post($descriptoin,1);
         if($isCreated){
             header('location:../views/post_view.php');
-        }else{
-            header('location:../views/create_view.php');
         }
     }
 }

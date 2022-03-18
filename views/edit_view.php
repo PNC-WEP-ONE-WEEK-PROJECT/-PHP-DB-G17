@@ -23,11 +23,6 @@ require_once('../models/post.php');
         <div class="form-group">
             <input type="text" class="form-control" placeholder="descriptoin" name="descriptoin" value="<?php echo $post['descriptoin'] ?>">
         </div>
-        <!-- <input type="file" name="uploadfile" value="" class="form-control"/>
-        <div>
-            <button type="submit" name="upload" class="form-control">UPLOAD</button>
-        </div>
-        <div class="form-group"> -->
             <button class="submit form-control bg-primary">Post</button>
         </div>
 </form>

@@ -54,3 +54,23 @@ function udate_post($post_id,$descriptoin,$user_id){
     ]);
     return $statement->rowcount()>0;
 }
+
+// -----function comment-----
+function create_comment($description,$user_id,$post_id){
+    global $db;
+    $statement = $db->prepare('INSERT INTO comments (description,user_id,post_id) values(:description,:user_id,:post_id)');
+    $statement->execute([
+        ':description' => $description,
+        ':user_id' => $user_id,
+        ':post_id' => $post_id
+    ]);
+    return $statement->rowcount()>0;
+}
+
+
+function get_comment_post(){
+    global $db;
+    $statement=$db->prepare("SELECT * FROM comments ORDER BY comment_id desc");
+    $statement->execute();
+    return $statement->fetch();
+}
