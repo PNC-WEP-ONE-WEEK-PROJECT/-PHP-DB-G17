@@ -11,8 +11,6 @@ if($_SERVER['REQUEST_METHOD']=='POST' or !empty($_FILES['file_name']['name']))
         $isCreated = create_post($descriptoin,$image,1);
         if($isCreated){
             header('location:../views/post_view.php');
-        }else{
-            header('location:../views/create_view.php');
         }
     }
 }

@@ -30,9 +30,9 @@ function get_post()
 function delete_post($id)
 {
     global $db;
-    $statement = $db->prepare('DELETE FROM posts WHERE post_id = :id');
+    $statement = $db->prepare('DELETE FROM posts WHERE post_id = :post_id');
     $statement->execute([
-        ':id' => $id
+        ':post_id' => $id
     ]);
     return $statement->rowCount() > 0;
    
@@ -46,14 +46,33 @@ function get_post_by_id($id){
     return $statement->fetch();
 }
 
-function udate_post($descriptoin,$imges,$user_id){
+function udate_post($descriptoin,$images,$post_id){
     global $db;
-    $statement=$db ->prepare("UPDATE POSTS SET descriptoin=:descriptoin,imges=:imges,user_id=:user_id where post_id = :post_id");
+    $statement=$db ->prepare("UPDATE posts SET descriptoin=:descriptoin,imges=:imges where post_id = :post_id");
     $statement->execute([
         ':descriptoin'=>$descriptoin,
         ':imges'=>$images,
+        ':post_id' => $post_id
+    ]);
+    return $statement->rowcount()>0;
+}
+
+// -----function comment-----
+function create_comment($content,$user_id,$post_id){
+    global $db;
+    $statement = $db->prepare('INSERT INTO comments (content,user_id,post_id) values(:content,:user_id,:post_id)');
+    $statement->execute([
+        ':content' => $content,
         ':user_id' => $user_id,
         ':post_id' => $post_id
     ]);
     return $statement->rowcount()>0;
+}
+
+
+function get_comment_post(){
+    global $db;
+    $statement=$db->prepare("SELECT * FROM comments ORDER BY comment_id desc");
+    $statement->execute();
+    return $statement->fetch();
 }
