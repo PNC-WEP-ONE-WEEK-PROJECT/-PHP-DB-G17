@@ -26,7 +26,7 @@ require_once ('models/post.php');
                     <p>2021-10-02</p>
                 </div>
                 <div class="description"><?php echo $post['descriptoin'] ?></div> 
-                <div class="img-post"><img src="images/girls.jpg" alt=""></div>
+                <div class="img-post"><img src="image_upload/<?= $post['imges']?>" alt=""></div>
 
         </div>
             <?php endforeach ?>

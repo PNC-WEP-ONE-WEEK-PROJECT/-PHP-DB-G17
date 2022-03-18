@@ -10,18 +10,17 @@ require_once ('../models/post.php');
   </div>
 </nav>
 <div class="container">
-    <!-- Your code here -->
-        <form action="../controllers/create_post.php" method="post">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="descriptoin" name="descriptoin">
-        </div>
-        <!-- <input type="file" name="uploadfile" value="" class="form-control"/>
-        <div>
-            <button type="submit" name="upload" class="form-control">UPLOAD</button>
-        </div>
-        <div class="form-group"> -->
-            <button class="submit form-control bg-primary">Post</button>
-        </div>
+   
+        <form action="../controllers/create_post.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="descriptoin" name="descriptoin">
+                <!-- input file image  -->
+                <label for="uploadfile"><i class='fas fa-image' style='font-size:36px;color:green'></i></label>
+                <input type="file" name="uploadfile" value="" class="form-control" style='display:none' id="uploadfile">
+            </div>
+            <div class="form-group"> 
+                <button type="submit"  class="submit form-control bg-primary">Post</button>
+            </div>
         </form>
         <div class="container">
     <?php
@@ -34,7 +33,9 @@ require_once ('../models/post.php');
                     <p>2021-10-02</p>
                 </div>
                 <div class="description"><?php echo $post['descriptoin'] ?></div> 
-                <!-- <div class="img-post"><img src="../images/girls.jpg" alt=""></div> -->
+                <div class="img-post">
+                    <img src="../image_upload/<?= $post['imges']?>" alt="">
+                </div>
                 <div class="icon">
                     <!-- edit -->
                     <a href="edit_view.php?id=<?php echo $post['post_id']?>" ><i class="fa fa-pen"></i></a>
