@@ -33,6 +33,7 @@ require_once ('models/post.php');
 
             
             <div class="container m-3">
+                <!-- display like -->
 
                 <?php
                      $likes=get_like($post['post_id']);
@@ -45,7 +46,7 @@ require_once ('models/post.php');
                  <?php endforeach ?>
                  <button ><a href="views/display_comment_view.php?id=<?php echo $post['post_id'] ?>" >comment</a> </button>
             </div>
-            
+            <!-- display comment -->
             <?php
                 $comments= get_comment_post($post['post_id']);
                 foreach($comments as $comment):
