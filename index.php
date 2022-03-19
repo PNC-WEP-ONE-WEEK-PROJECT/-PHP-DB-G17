@@ -31,7 +31,31 @@ require_once ('models/post.php');
                 <!-- <div class="img-post"><img src="images/girls.jpg" alt=""></div> -->
 
 
-            <!-- display  -->
+            
+            <div class="container m-3">
+
+                <?php
+                     $likes=get_like($post['post_id']);
+                     foreach($likes as $like):
+                 ?>
+                 <form action="controllers/insert_like.php" method='post'class="d-flex mr-5">
+                     <button type='submit' class="">like ❤ <span><?= $like['num_of_like']?></span> </button>
+                     <input type="hidden" name="like" style='display:none' value="<?php echo $post['post_id'] ?>">
+                 </form>
+                 <?php endforeach ?>
+                 <button ><a href="views/display_comment_view.php?id=<?php echo $post['post_id'] ?>" >comment</a> </button>
+            </div>
+            
+            <?php
+                $comments= get_comment_post($post['post_id']);
+                foreach($comments as $comment):
+            ?>
+            <div class="mb-1 w-75 mx-auto  border rounded">
+                <span class="p-2"><?= $comment['content']?></span>
+            </div>
+            
+            <?php endforeach ?>
+        </div>
         <?php endforeach ?>
     </div>
 
