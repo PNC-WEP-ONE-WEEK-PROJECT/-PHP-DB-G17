@@ -69,7 +69,7 @@ function create_comment($content,$user_id,$post_id){
     return $statement->rowcount()>0;
 }
 
-
+// get comment
 function get_comment_post($post_id){
     global $db;
     $statement=$db->prepare("SELECT * FROM comments WHERE post_id=:post_id");
@@ -80,7 +80,7 @@ function get_comment_post($post_id){
 
     
 }
-
+// insert like
 function insert_like($user_id,$post_id,$num_like){
     global $db;
     $statement = $db->prepare('INSERT INTO likes (user_id,post_id,num_like) values(:user_id,:post_id,:num_like)');
@@ -91,7 +91,7 @@ function insert_like($user_id,$post_id,$num_like){
     ]);
     return $statement->rowcount()>0;
 }
-
+// git like on post
 function get_like($post_id){
     global $db;
     $statement=$db->prepare("SELECT count(num_like) AS 'num_of_like' FROM likes WHERE post_id=:post_id");

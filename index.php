@@ -39,7 +39,7 @@ require_once ('models/post.php');
                      $likes=get_like($post['post_id']);
                      foreach($likes as $like):
                  ?>
-                 <form action="controllers/insert_like.php" method='post'class="d-flex mr-5">
+                 <form action="controllers/insert_like.php" method='post'class="d-flex mr-4">
                      <button type='submit' class="">like ❤ <span><?= $like['num_of_like']?></span> </button>
                      <input type="hidden" name="like" style='display:none' value="<?php echo $post['post_id'] ?>">
                  </form>
