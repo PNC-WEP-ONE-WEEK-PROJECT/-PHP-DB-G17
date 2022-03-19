@@ -29,7 +29,7 @@ require_once('../models/post.php');
           <input type="hidden" name="old_image" value="<?php echo $post['imges']?>">
         </div>
         <div class="form-group">
-            <button class="submit form-control bg-primary">Post</button>
+            <button class="submit form-control bg-primary">Update</button>
         </div>
 </form>
 </div>
