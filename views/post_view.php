@@ -1,4 +1,5 @@
 <?php
+// require file
 require_once ('../templates/header.php');
 require_once ('../models/post.php');
 
