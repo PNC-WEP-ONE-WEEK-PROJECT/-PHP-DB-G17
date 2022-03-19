@@ -8,8 +8,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
    if(!empty($content) and !empty($post_id) ){
        $is_created = create_comment($content,1,$post_id);
        if($is_created){
+           header('location:../index.php');
+        }
     }
-    header('location:../index.php');
-   }
 }
-?>

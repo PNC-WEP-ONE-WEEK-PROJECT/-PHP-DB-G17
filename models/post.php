@@ -39,7 +39,7 @@ function delete_post($id)
 }
 function get_post_by_id($id){
     global $db;
-    $statement =$db->prepare("SELECT * FROM posts WHERE post_id = :post_id");
+    $statement =$db->prepare("SELECT * FROM posts WHERE post_id = :post_id ORDER BY post_id");
     $statement->execute([
         ':post_id'=>$id,
     ]);
@@ -70,9 +70,33 @@ function create_comment($content,$user_id,$post_id){
 }
 
 
-function get_comment_post(){
+function get_comment_post($post_id){
     global $db;
-    $statement=$db->prepare("SELECT * FROM comments ORDER BY comment_id desc");
-    $statement->execute();
-    return $statement->fetch();
+    $statement=$db->prepare("SELECT * FROM comments WHERE post_id=:post_id");
+    $statement->execute([
+        ':post_id' => $post_id
+    ]);
+    return $statement->fetchAll();
+
+    
+}
+
+function insert_like($user_id,$post_id,$num_like){
+    global $db;
+    $statement = $db->prepare('INSERT INTO likes (user_id,post_id,num_like) values(:user_id,:post_id,:num_like)');
+    $statement->execute([
+        ':user_id' => $user_id,
+        ':post_id' => $post_id,
+        ':num_like'=> $num_like
+    ]);
+    return $statement->rowcount()>0;
+}
+
+function get_like($post_id){
+    global $db;
+    $statement=$db->prepare("SELECT count(num_like) AS 'num_of_like' FROM likes WHERE post_id=:post_id");
+    $statement->execute([
+        ':post_id' => $post_id
+    ]);
+    return $statement->fetchAll();
 }

@@ -14,10 +14,11 @@ if($id!=null){
 <form action="../controllers/display_comment.php" method="post">
         <input type="hidden" value="<?php echo $post['post_id']?>" name="id">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="comment" name="comment" value="">
+            <input type="text" class="form-control " placeholder="comment" name="comment" value="">
         </div>
             <button class="submit form-control bg-primary">Send</button>
         </div>
+
 </form>
 </div>
 
