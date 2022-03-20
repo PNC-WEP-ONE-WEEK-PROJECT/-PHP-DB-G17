@@ -1,8 +1,11 @@
 <?php 
 require_once ('templates/header.php');
 require_once ('models/post.php');
+require_once ('models/comment.php');
+require_once ('models/like.php');
 ?>
-<!-- navbar -->
+<!--------------------------------navbar------------- -->
+
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">Facebook</span>
@@ -10,11 +13,11 @@ require_once ('models/post.php');
   </div>
 </nav>
 
-<!-- container -->
+<!-- ----------------container------------------ -->
 
 <div class="container">
 
-<!-- post filture in right  -->
+<!----------------------- post filture in right-------------  -->
     <div class="rigth-bar">
         <div class="mx-auto w-75">
     <?php
@@ -31,35 +34,37 @@ require_once ('models/post.php');
             <div class="card-body">
                     <div class="p-2 ml-3"><?php echo $post['descriptoin'] ?></div> 
                     <div class="img-post w-100 "><img class="w-100" src="image_upload/<?= $post['imges']?>" alt=""></div>
-
-                    <!-- <button class="like"><a class="fa fa fa-thumbs-up"  >like ❤ 23k</a> </button>
-                    <button class="like"><a href="views/display_comment_view.php?id=<?php echo $post['post_id'] ?>" >comment</a> </button> -->
                 </div>
-                <!-- <div class="img-post"><img src="images/girls.jpg" alt=""></div> -->
 
-
-            
             <div class="container m-3">
-                <!-- display like -->
+<!-- ---------------------------display like--------------------- -->
 
-                <?php
-                     $likes=get_like($post['post_id']);
-                     foreach($likes as $like):
-                 ?>
+<?php
+    $likes=get_like($post['post_id']);
+    foreach($likes as $like):
+?>
                  <form action="controllers/insert_like.php" method='post'class="d-flex mr-4">
-                     <button type='submit' class="">like ❤ <span><?= $like['num_of_like']?></span> </button>
+                     <button type='submit' class="">
+                         like ❤ <span><?= $like['num_of_like']?></span> 
+                    </button>
                      <input type="hidden" name="like" style='display:none' value="<?php echo $post['post_id'] ?>">
                  </form>
-                 <?php endforeach ?>
+<?php endforeach ?>
                  <button ><a href="views/display_comment_view.php?id=<?php echo $post['post_id'] ?>" >comment</a> </button>
-            </div>
-            <!-- display comment -->
+        </div>
+<!--------------------------- display comment-------------------- -->
             <?php
                 $comments= get_comment_post($post['post_id']);
                 foreach($comments as $comment):
             ?>
             <div class="mb-1 w-75 mx-auto  border rounded">
                 <span class="p-2"><?= $comment['content']?></span>
+                <div class="icon d-inline">
+                    <!-- edit -->
+                    <!-- <a href="edit_view.php?id=<?php echo $post['post_id']?>"><i class="fa fa-pen"></i></a> -->
+                    <!-- delete -->
+                    <a href="controllers/delete_comment.php?id=<?php echo $comment['post_id'] ?>" ><i class="fa fa-trash"></i></a>
+                </div>
             </div>
             
             <?php endforeach ?>
@@ -67,7 +72,8 @@ require_once ('models/post.php');
         <?php endforeach ?>
     </div>
 </div>
-    <!-- put img cover and profile -->
+
+<!------------------------------ put img cover and profile------------ -->
     <div class="left-bar ">
         <div>
             <img class="img-cover" src="images/cute.jpg" alt="">

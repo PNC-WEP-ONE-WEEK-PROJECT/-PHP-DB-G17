@@ -1,6 +1,6 @@
 <?php
 // insert like 
-require_once '../models/post.php';
+require_once '../models/like.php';
 if($_SERVER['REQUEST_METHOD']=='POST')
 {   
     $num_like = 1;

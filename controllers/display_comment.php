@@ -1,5 +1,5 @@
 <?php
-require_once '../models/post.php';
+require_once '../models/comment.php';
 if($_SERVER['REQUEST_METHOD']=='POST')
 {   
     $post_id =$_POST['id'];
