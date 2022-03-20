@@ -31,7 +31,7 @@ require_once ('../models/post.php');
                     <img src="../images/rady.jpg" class="rounded-circle w-25  h-25" alt="">
                     <div>
                         <h5 class="d-inline">Mey Sok</h5>
-                        <p class="">2021-10-02</p>                
+                        <p><?php echo $post['postDate']?></p>                
                     </div>   
             </div>
             

@@ -13,8 +13,15 @@
 
         <div class="card mt-5">
             <div class="card-header  w-25 h-75">
+<<<<<<< HEAD
                 <img src="images/rady.jpg" class="rounded-circle w-50 h-75" alt="">
                 <p>2021-10-02</p>
+=======
+                <img src="images/rady.jpg" class="rounded-circle w-50 h-75" alt="">  
+                <H5>MEY SOK</H5>
+          
+            <p><?php echo $post['postDate']?></p>
+>>>>>>> e89834b32637332e50c0fd1d802a72f80a8dbcc6
             </div>
             <div class="card-body">
                     <div class="p-2 ml-3"><?php echo $post['descriptoin'] ?></div> 
@@ -42,22 +49,24 @@
                 $comments= get_comment_post($post['post_id']);
                 foreach($comments as $comment):
             ?>
-            <div class="mb-1 w-75 mx-auto  border rounded">
+            <div class="mb-1 w-75 mx-auto d-flex justify-content-between border">
                 <span class="p-2"><?= $comment['content']?></span>
-                <div class="icon d-inline">
-                    <!-- edit -->
-                    <a href="views/edit_comment_view.php?id=<?php echo $comment['comment_id']?>"><i class="fa fa-pen"></i></a>
-                    <!-- delete -->
-                    <a href="controllers/delete_comment.php?id=<?php echo $comment['comment_id'] ?>" ><i class="fa fa-trash"></i></a>
+                <div class="dropdown">
+                    <button class=" btn btn-none text-dark " type="button" data-toggle="dropdown">...</button>
+                    <ul class="dropdown-menu">
+                        <!-- edit -->
+                        <a href="views/edit_comment_view.php?id=<?php echo $comment['comment_id']?>"><i class="fa fa-pen"></i></a>
+                        <!-- delete -->
+                        <a href="controllers/delete_comment.php?id=<?php echo $comment['comment_id'] ?>" ><i class="fa fa-trash"></i></a>
+
+                    </ul>
                 </div>
             </div>
-            
             <?php endforeach ?>
         </div>
         <?php endforeach ?>
     </div>
 </div>
-
 <!------------------------------ put img cover and profile------------ -->
     <div class="left-bar ">
         <div>
