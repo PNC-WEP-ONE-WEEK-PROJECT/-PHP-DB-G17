@@ -13,15 +13,8 @@
 
         <div class="card mt-5">
             <div class="card-header  w-25 h-75">
-<<<<<<< HEAD
                 <img src="images/rady.jpg" class="rounded-circle w-50 h-75" alt="">
-                <p>2021-10-02</p>
-=======
-                <img src="images/rady.jpg" class="rounded-circle w-50 h-75" alt="">  
-                <H5>MEY SOK</H5>
-          
-            <p><?php echo $post['postDate']?></p>
->>>>>>> e89834b32637332e50c0fd1d802a72f80a8dbcc6
+                <p><?php echo $post['postDate']?></p>
             </div>
             <div class="card-body">
                     <div class="p-2 ml-3"><?php echo $post['descriptoin'] ?></div> 
@@ -83,3 +76,5 @@
         </div>
 </div>
 </div>
+
+
