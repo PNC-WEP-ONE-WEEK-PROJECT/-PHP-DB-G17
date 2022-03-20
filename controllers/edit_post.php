@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$tempname = $_FILES["uploadfile"]["tmp_name"];
     $target="../image_upload/".$imges;
     move_uploaded_file($tempname,$target);
-    if(!empty($descriptoin) and !empty($imges)){
+    if(!empty($descriptoin) or !empty($imges)){
         $up_date_posts = udate_post($descriptoin,$imges,$id);
        
         header('location:../views/post_view.php');

@@ -32,5 +32,23 @@ function delete_comment($comment_id)
         ':comment_id' => $comment_id
     ]);
     return $statement->rowCount() > 0;
-   
+}
+
+function get_comment_by_id($id){
+    global $db;
+    $statement =$db->prepare("SELECT * FROM comments WHERE comment_id = :comment_id ORDER BY comment_id");
+    $statement->execute([
+        ':comment_id'=>$id,
+    ]);
+    return $statement->fetch();
+}
+
+function update_comment($content,$comment_id){
+    global $db;
+    $statement=$db ->prepare("UPDATE comments SET content=:content where comment_id = :comment_id");
+    $statement->execute([
+        ':content'=>$content,
+        ':comment_id' => $comment_id
+    ]);
+    return $statement->rowcount()>0;
 }
