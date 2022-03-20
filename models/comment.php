@@ -24,12 +24,12 @@ function get_comment_post($post_id){
     
 }
 
-function delete_comment($post_id)
+function delete_comment($comment_id)
 {
     global $db;
-    $statement = $db->prepare('DELETE FROM comments WHERE post_id = :post_id');
+    $statement = $db->prepare('DELETE FROM comments WHERE comment_id = :comment_id');
     $statement->execute([
-        ':post_id' => $post_id
+        ':comment_id' => $comment_id
     ]);
     return $statement->rowCount() > 0;
    

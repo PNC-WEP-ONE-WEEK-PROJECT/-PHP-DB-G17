@@ -63,7 +63,7 @@ require_once ('models/like.php');
                     <!-- edit -->
                     <!-- <a href="edit_view.php?id=<?php echo $post['post_id']?>"><i class="fa fa-pen"></i></a> -->
                     <!-- delete -->
-                    <a href="controllers/delete_comment.php?id=<?php echo $comment['post_id'] ?>" ><i class="fa fa-trash"></i></a>
+                    <a href="controllers/delete_comment.php?id=<?php echo $comment['comment_id'] ?>" ><i class="fa fa-trash"></i></a>
                 </div>
             </div>
             
