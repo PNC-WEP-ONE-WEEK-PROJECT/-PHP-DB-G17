@@ -9,15 +9,15 @@ require_once ('../models/post.php');
 <nav class="navbar navbar-light bg-light" style="position: -webkit-sticky; position: sticky; top: 0; z-index:1;">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 text-primary "> <h3>Facebook </h3></span>
-    <i class="fa fa fa-user text-primary " style="font-size:40px"></i>
+    <i class="fa fa fa-user text-primary p-2 " style="font-size:40px;border-bottom: 3px solid blue"></i>
     <a href="../index.php"><i class="fa fa fa-home" style="font-size:40px"></i></a>
   </div>
 </nav>
 
 <!-------------------button add post--------------- -->
 
-<div class="container mt-5  m-auto "  >
-    <div class="text-center  ">
+<div class="container  m-auto "  >
+    <div class="text-center ">
         <button   type="button" class="btn btn-primary bg-primary w-75 m-auto " data-bs-toggle="modal" data-bs-target="#staticBackdrop">+Add Post</button>
     </div>
 
@@ -61,7 +61,7 @@ require_once ('../models/post.php');
                 </div>
                 <div class="dropdown ">
                     <button class=" btn btn-none text-dark  " type="button" data-toggle="dropdown"><h1>...</h1></button>
-                    <div class="dropdown-menu" style="border:none;">
+                    <div class="dropdown-menu" style="border:none; background:none;">
                         <!-- edit -->
                         <a href="edit_view.php?id=<?php echo $post['post_id']?>"><i class="fa fa-pen"></i></a>
                         <!-- delete -->

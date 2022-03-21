@@ -40,11 +40,11 @@
                 <p class="comment p-2"><?= $comment['content']?></p>
                 <div class="dropdown">
                     <button class=" btn btn-none text-dark " type="button" data-toggle="dropdown"><h3>...</h3></button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" style="border:none; background:none;">
                         <!-- edit -->
                         <a href="views/edit_comment_view.php?id=<?php echo $comment['comment_id']?>"><i class="fa fa-pen"></i></a>
                         <!-- delete -->
-                        <a href="controllers/delete_comment.php?id=<?php echo $comment['comment_id'] ?>" ><i class="fa fa-trash"></i></a>
+                        <a href="controllers/delete_comment.php?id=<?php echo $comment['comment_id'] ?>" ><i class="fa fa-trash text-danger"></i></a>
                     </ul>
                 </div>
             </div>

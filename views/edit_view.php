@@ -6,7 +6,7 @@ require_once('../models/post.php');
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 text-primary">Facebook </span>
-    <i class="fa fa fa-user " style="font-size:40px"></i>
+    <i class="fa fa fa-user " style="font-size:40px; border-bottom: 3px solid blue"></i>
     <a href="../index.php"><i class="fa fa fa-home" style="font-size:40px"></i></a>
   </div>
 </nav>

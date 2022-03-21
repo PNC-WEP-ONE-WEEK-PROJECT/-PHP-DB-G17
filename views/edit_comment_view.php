@@ -6,7 +6,7 @@ require_once('../models/comment.php');
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 text-primary"> <h3>Facebook</h3></span>
-    <i class="fa fa fa-comment " style="font-size:40px"></i>
+    <i class="fa fa fa-comment " style="font-size:40px; border-bottom: 3px solid black;"></i>
     <a href="../index.php"><i class="fa fa fa-home" style="font-size:40px"></i></a>
   </div>
 </nav>
