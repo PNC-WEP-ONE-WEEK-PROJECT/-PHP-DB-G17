@@ -10,7 +10,7 @@
             ?>
             <div class="card mt-5">
                 <div class="card-header  w-25 h-75">
-                    <img src="images/rady.jpg" class="rounded-circle w-50 h-75" alt="">  
+                    <img src="images/sweet.jpg" class="rounded-circle w-50 h-75" alt="">  
                     <H5>MEY SOK</H5>
                     <p><?php echo $post['postDate']?></p>
                 </div>

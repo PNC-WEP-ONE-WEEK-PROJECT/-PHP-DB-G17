@@ -1,25 +1,28 @@
 <?php
 // require file
 require_once ('../templates/header.php');
+
 require_once ('../models/post.php');
 
 ?>
 <!-- ----------------------navbar-------------- -->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light" style="position: -webkit-sticky; position: sticky; top: 0; z-index:1;">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Facebook</span>
-    <i class="fa fa fa-user " style="font-size:40px"></i>
+    <span class="navbar-brand mb-0 h1 text-primary "> <h3>Facebook </h3></span>
+    <i class="fa fa fa-user text-primary " style="font-size:40px"></i>
     <a href="../index.php"><i class="fa fa fa-home" style="font-size:40px"></i></a>
   </div>
 </nav>
 
 <!-------------------button add post--------------- -->
 
-<div class="container mt-5  ">
-    <button type="button" class="btn btn-primary bg-primary col-6  m-auto " data-bs-toggle="modal" data-bs-target="#staticBackdrop">+Add Post</button>
+<div class="container mt-5  m-auto "  >
+    <div class="text-center  ">
+        <button   type="button" class="btn btn-primary bg-primary w-75 m-auto " data-bs-toggle="modal" data-bs-target="#staticBackdrop">+Add Post</button>
+    </div>
 
-<!-- -------------------Modal---------------------- -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- -------------------Modal---------------------- -->
+    <div class="modal fade w-75 m-auto" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -42,13 +45,13 @@ require_once ('../models/post.php');
             </div>
         </div>
     </div>
-<!-- -----------------------card post------------------- -->
-    <div class=" w-50 col-12">
+    <!-- -----------------------card post------------------- -->
+    <div class=" w-75 m-auto col-12">
         <?php
             $posts = get_post();
             foreach($posts as $post):
         ?>
-<!-- -------------------------create profilt acc  when post------------- -->
+    <!-- -------------------------create profilt acc  when post------------- -->
         <div class="card m-5 ">
             <div class="card-header bg-white d-flex justify-content-between">                                       
                 <div class=" w-25 h-75 ">
@@ -58,15 +61,15 @@ require_once ('../models/post.php');
                 </div>
                 <div class="dropdown ">
                     <button class=" btn btn-none text-dark  " type="button" data-toggle="dropdown"><h1>...</h1></button>
-                    <div class="dropdown-menu ">
+                    <div class="dropdown-menu" style="border:none;">
                         <!-- edit -->
                         <a href="edit_view.php?id=<?php echo $post['post_id']?>"><i class="fa fa-pen"></i></a>
                         <!-- delete -->
-                        <a href="../controllers/delete_post.php?id=<?php echo $post['post_id'] ?>" ><i class="fa fa-trash"></i></a>
+                        <a href="../controllers/delete_post.php?id=<?php echo $post['post_id'] ?>" ><i class="fa fa-trash text-danger"></i></a>
                     </div>
                 </div>   
             </div>
-<!-----------------------------create descriptoin and img for post ----------------->
+    <!-----------------------------create descriptoin and img for post ----------------->
             <div class="card-body">
                 <div class="p-2 ml-3"><?php echo $post['descriptoin'] ?></div> 
                 <div class="img-post"><img src="../image_upload/<?= $post['imges']?>" alt="" class="w-100"></div>

@@ -5,7 +5,7 @@ require_once('../models/comment.php');
 <!--------------------------- form input edit post--------------- -->
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Facebook</span>
+    <span class="navbar-brand mb-0 h1 text-primary"> <h3>Facebook</h3></span>
     <i class="fa fa fa-comment " style="font-size:40px"></i>
     <a href="../index.php"><i class="fa fa fa-home" style="font-size:40px"></i></a>
   </div>

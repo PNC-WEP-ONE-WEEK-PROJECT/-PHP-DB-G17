@@ -96,3 +96,9 @@ navbar-brand{
 .comment{
 border-bottom: 1px solid lightgray;
 }
+.main{
+    margin-right: 30%;
+    background-color: rebeccapurple;
+    justify-content: center;
+    
+}
