@@ -29,7 +29,7 @@ require_once ('../models/post.php');
                 <div class="modal-body">
                     <form action="../controllers/create_post.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            input type="text" class="form-control" placeholder="descriptoin" name="descriptoin">
+                            <input type="text" class="form-control" placeholder="descriptoin" name="descriptoin">
                             <!-- input file image  -->
                             <label for="uploadfile"><i class='fas fa-image' style='font-size:36px;color:green'></i></label>
                             <input type="file" name="uploadfile" value="" class="form-control" style='display:none' id="uploadfile">
