@@ -1,4 +1,7 @@
 /* profile-post */
+body{
+    background:  #F4F6F7  ;
+}
 .card-header .profile{
     width: 50px;
 }
@@ -73,6 +76,11 @@
 .btn_post button a{
     text-decoration: none;
 }
+button{
+    border: none;
+    background: none;
+    color: blue;
+}
 
 .like{
     margin-top: 20px;
@@ -83,4 +91,8 @@
 }
 navbar-brand{
     color:blue;
+}
+
+.comment{
+border-bottom: 1px solid lightgray;
 }

@@ -1,7 +1,6 @@
 <?php require_once '../models/post.php';
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $id = $_POST['itemId'];
-   
     $descriptoin = $_POST['descriptoin'];
     $imges = $_POST['old_image'];
     if (!empty($_FILES["uploadfile"]["name"])){
@@ -11,8 +10,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $target="../image_upload/".$imges;
     move_uploaded_file($tempname,$target);
     if(!empty($descriptoin) or !empty($imges)){
-        $up_date_posts = udate_post($descriptoin,$imges,$id);
-       
+        $up_date_posts = update_post($descriptoin,$imges,$id);
         header('location:../views/post_view.php');
     }
 }

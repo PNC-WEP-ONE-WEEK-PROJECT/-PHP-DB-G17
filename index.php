@@ -7,11 +7,3 @@ require_once ('templates/nav.php');
 require_once ('templates/body.php');
 require_once ('templates/footer.php');
 ?>
-
-
-
-
-
-
-
-

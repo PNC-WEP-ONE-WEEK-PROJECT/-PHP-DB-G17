@@ -1,9 +1,6 @@
 <?php
-/**
- * Your code here
- */
 require_once('database.php');
-
+// ________________________function create post____________
 function create_post($descriptoin,$image,$user_id)
 {
     global $db;
@@ -15,9 +12,7 @@ function create_post($descriptoin,$image,$user_id)
     ]);
     return $statement->rowcount()>0;
 }
-
-
-
+// ________________________function get post____________
 function get_post()
 {   
     
@@ -26,7 +21,7 @@ function get_post()
     $statement->execute();
     return $statement->fetchAll();
 }
-
+// ________________________function remove post____________
 function delete_post($id)
 {
     global $db;
@@ -35,8 +30,8 @@ function delete_post($id)
         ':post_id' => $id
     ]);
     return $statement->rowCount() > 0;
-   
 }
+// ________________________function get post by id____________
 function get_post_by_id($id){
     global $db;
     $statement =$db->prepare("SELECT * FROM posts WHERE post_id = :post_id ORDER BY post_id");
@@ -45,8 +40,8 @@ function get_post_by_id($id){
     ]);
     return $statement->fetch();
 }
-
-function udate_post($descriptoin,$images,$post_id){
+// ________________________function update post____________
+function update_post($descriptoin,$images,$post_id){
     global $db;
     $statement=$db ->prepare("UPDATE posts SET descriptoin=:descriptoin,imges=:imges where post_id = :post_id");
     $statement->execute([
