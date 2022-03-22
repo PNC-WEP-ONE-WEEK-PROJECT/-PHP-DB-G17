@@ -3,10 +3,12 @@
 require_once ('../templates/header.php');
 
 require_once ('../models/post.php');
+require_once ('../models/like.php');
+require_once ('../models/comment.php');
 
 ?>
 <!-- ----------------------navbar-------------- -->
-<nav class="navbar navbar-light bg-light" style="position: -webkit-sticky; position: sticky; top: 0; z-index:1;">
+<nav class="navbar navbar-light bg-white" style="position: -webkit-sticky; position: sticky; top: 0; z-index:1;">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 text-primary "> <h3>Facebook </h3></span>
     <i class="fa fa fa-user text-primary p-2 " style="font-size:40px;border-bottom: 3px solid blue"></i>
@@ -16,7 +18,7 @@ require_once ('../models/post.php');
 
 <!-------------------button add post--------------- -->
 
-<div class="container  m-auto "  >
+<div class="container  m-auto bg-light"  >
     <div class="text-center ">
         <button   type="button" class="btn btn-primary bg-primary w-75 m-auto " data-bs-toggle="modal" data-bs-target="#staticBackdrop">+Add Post</button>
     </div>
@@ -55,7 +57,7 @@ require_once ('../models/post.php');
         <div class="card m-5 ">
             <div class="card-header bg-white d-flex justify-content-between">                                       
                 <div class=" w-25 h-75 ">
-                    <img src="../images/rady.jpg" class="rounded-circle w-50 h-75 " alt="">  
+                    <img src="../images/sweet.jpg" class="rounded-circle w-50 h-75 " alt="">  
                     <H5>MEY SOK</H5>
                     <p><?php echo $post['postDate']?></p>
                 </div>
@@ -74,6 +76,37 @@ require_once ('../models/post.php');
                 <div class="p-2 ml-3"><?php echo $post['descriptoin'] ?></div> 
                 <div class="img-post"><img src="../image_upload/<?= $post['imges']?>" alt="" class="w-100"></div>
             </div>
+            <div class="container m-3  justify-content-between" style="display:flex;border:none;background:none;">
+<!-- ---------------------------display like--------------------- -->
+                    <?php
+                        $likes=get_like($post['post_id']);
+                        foreach($likes as $like):
+                    ?>
+                    <form action="../controllers/insert_like.php" method='post'class="d-flex mr-4">
+                        <button type='submit'style="display:flex;border:none;background:none;">like ❤ <span><?= $like['num_of_like']?></span> </button>
+                        <input type="hidden" name="like" style='display:none' value="<?php echo $post['post_id'] ?>">
+                    </form>
+                <?php endforeach ?>
+                <button class="m-3" style="display:flex;border:none;background:none;"><a href="../views/display_comment_view.php?id=<?php echo $post['post_id'] ?>" >comment</a> </button>
+                </div>
+<!--------------------------- display comment-------------------- -->
+            <?php
+                $comments= get_comment_post($post['post_id']);
+                foreach($comments as $comment):
+            ?>
+            <div class="mb-1 w-75 mx-auto d-flex justify-content-between ">
+                <p class="comment p-2"><?= $comment['content']?></p>
+                <div class="dropdown">
+                    <button class=" btn btn-none text-dark " type="button" data-toggle="dropdown"><h3>...</h3></button>
+                    <ul class="dropdown-menu" style="border:none; background:none;">
+                        <!-- edit -->
+                        <a href="../views/edit_comment_view.php?id=<?php echo $comment['comment_id']?>"><i class="fa fa-pen"></i></a>
+                        <!-- delete -->
+                        <a href="../controllers/delete_comment.php?id=<?php echo $comment['comment_id'] ?>" ><i class="fa fa-trash text-danger"></i></a>
+                    </ul>
+                </div>
+            </div>
+            <?php endforeach ?>
         </div>
         <?php endforeach ?>
     </div>        
